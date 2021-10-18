@@ -1,9 +1,16 @@
+//sidemenuebar
+document.querySelector(".minimenue").addEventListener('click', () => {
+document.querySelector(".sideBar").classList.toggle("change")
+}) 
+
 // checkout,minus,add,amnt 1
 
 const bigButton = document.querySelector(".Mbutton");
 const minusBtn = document.querySelector(".minusBtn");
 const addBtn = document.querySelector(".addBtn");
 var dueAmnt = document.querySelector(".due");
+
+var wholeCart = document.querySelector(".pizzaCart");
 
 //checkout,minus,add,amnt 2
 
@@ -79,7 +86,9 @@ Pay.addEventListener("click", function () {
 
   else {
     messageElem.classList.remove("hidden");
-    messageElem.innerHTML = "PROCEED TO CHECKOUT";
+    insTotal2 = insTotal - paytag;
+    messageElem.innerHTML = "Thank you, Your Change is R" + insTotal2.toFixed(2);
+
     setTimeout(function () {
 
       messageElem.classList.add("hidden")
@@ -104,7 +113,7 @@ addBtn.addEventListener("click", function () {
   tsPizza.innerHTML = SmallTotal.toFixed(2);
   paytag = SmallTotal + Mediumtotal + LargeTotal;
   dueAmnt.innerHTML = paytag.toFixed(2);
- // addBtn.classList.remove("hidden");
+  // addBtn.classList.remove("hidden");
 })
 bigButton
 minusBtn.addEventListener("click", function () {
@@ -217,7 +226,7 @@ minusBtn2.addEventListener("click", function () {
 //-B
 
 check1.addEventListener("click", function () {
-
+  //check1.classList.remove(".hidden2");
   sQty = sQty + 1;
   SmallTotal = sQty * 49.99;
   qty.innerHTML = sQty;
@@ -226,7 +235,27 @@ check1.addEventListener("click", function () {
   dueAmnt.innerHTML = paytag.toFixed(2);
   bigButton.classList.remove(".hidden");
 
+  
+  //////
+
+
 })
+
+
+//////my own hide trick(how to hide sections)
+document.querySelector(".addButton3").addEventListener('click', () => {
+  document.querySelector(".pizzaCart").classList.remove("hidden2")
+  }); 
+
+  document.querySelector(".addButton4").addEventListener('click', () => {
+    document.querySelector(".pizzaCart").classList.remove("hidden2")
+    }); 
+
+    document.querySelector(".addButton5").addEventListener('click', () => {
+      document.querySelector(".pizzaCart").classList.remove("hidden2")
+      }); 
+
+////endz/////
 
 
 
